@@ -7,7 +7,7 @@ class ApplicationController < Sinatra::Base
 		:database => 'food-pantry'
 
 		)
-	register Sinatr:CrossOrigin 
+	register Sinatra:CrossOrigin 
 
 		configure do 
 			enable :cross_origin
@@ -39,3 +39,4 @@ class ApplicationController < Sinatra::Base
 
 
 	end
+end
