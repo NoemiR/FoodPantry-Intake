@@ -8,12 +8,14 @@ require './controllers/ApplicationController'
 require './controllers/AdminController'
 require './controllers/FamilyController'
 require './controllers/RegistrationController'
+require './controllers/PickUpController'
 
 
 #models
 require './models/AdminModel'
 require './models/FamilyModel'
 require './models/RegistrationModel'
+require './models/PickUpModel'
 
 #routes
 
@@ -32,6 +34,17 @@ map('/families'){
 	run FamilyController
 }
 
-map('/registration'){
+map('/registrations'){
 	run RegistrationController
 }
+
+map('/pickups'){
+	run AdminController
+}
+
+
+
+
+
+
+

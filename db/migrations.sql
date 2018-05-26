@@ -29,3 +29,24 @@ CREATE TABLE registrations(
 	family_id INT REFERENCES families(id),
 	active BOOLEAN
 );
+
+
+
+
+CREATE TABLE pickups(
+	id SERIAL PRIMARY KEY,
+	date VARCHAR(64),
+	family_id INT REFERENCES families(id),
+	schedule_id INT REFERENCES schedule(id)
+);
+
+
+
+
+
+
+
+
+
+
+

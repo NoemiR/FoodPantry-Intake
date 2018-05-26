@@ -1,6 +1,15 @@
 class FamilyController < ApplicationController
 
+	before do 
+		payload_body = request.body.read
+		if(payload_body != "")
+			@payload = JSON.parse(payload_body).symbolize_keys
 
+			puts "_________________"
+			pp @payload 
+			puts "_________________"
+		end
+	end
 
 	get '/' do 
 		@families = Family.all

@@ -25,3 +25,16 @@ INSERT INTO registrations (date, family_id, active) VALUES ('8-05-15', '4', 'fal
 INSERT INTO registrations (date, family_id, active) VALUES ('9-09-18', '5', 'true');
 INSERT INTO registrations (date, family_id, active) VALUES ('5-15-12', '6', 'false');
 INSERT INTO registrations (date, family_id, active) VALUES ('6-19-17', '7', 'true');
+
+
+
+
+INSERT INTO pickups (date, family_id) VALUES ('6-19-17', '7');
+INSERT INTO pickups (date, family_id) VALUES ('3-19-17', '6');
+INSERT INTO pickups (date, family_id) VALUES ('4-19-17', '5');
+INSERT INTO pickups (date, family_id) VALUES ('4-19-17', '4');
+INSERT INTO pickups (date, family_id) VALUES ('7-19-17', '3');
+INSERT INTO pickups (date, family_id) VALUES ('5-19-17', '2');
+INSERT INTO pickups (date, family_id) VALUES ('6-09-15', '1');
+
+
