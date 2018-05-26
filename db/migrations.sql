@@ -22,3 +22,10 @@ CREATE TABLE families(
 	active BOOLEAN
 
 );
+
+CREATE TABLE registrations(
+	id SERIAL PRIMARY KEY,
+	date VARCHAR(64),
+	family_id INT REFERENCES families(id),
+	active BOOLEAN
+);

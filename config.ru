@@ -7,11 +7,13 @@ require 'sinatra/activerecord'
 require './controllers/ApplicationController'
 require './controllers/AdminController'
 require './controllers/FamilyController'
+require './controllers/RegistrationController'
 
 
 #models
 require './models/AdminModel'
 require './models/FamilyModel'
+require './models/RegistrationModel'
 
 #routes
 
@@ -28,4 +30,8 @@ map('/admin'){
 
 map('/families'){
 	run FamilyController
+}
+
+map('/registration'){
+	run RegistrationController
 }

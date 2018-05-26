@@ -25,6 +25,7 @@ class FamilyController < ApplicationController
 
 	get '/:id/schedule' do
 		family = Family.find params[:id]
+		this_family_schedule = family.schedule
 		{
 			success: true,
 			message: "schedule for #{family.name}",
@@ -32,6 +33,15 @@ class FamilyController < ApplicationController
 		}.to_json
 	end
 
+	get'/:id/registration' do 
+		family = Family.find params[:id]
+		this_family_registration = family.registration
+		{
+			success: true, 
+			message: "This family registered #{registration.date}",
+			registration: this_family_registration
+		}.to_json
+	end
 
 
 	post '/register' do 
