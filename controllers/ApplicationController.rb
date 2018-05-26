@@ -3,11 +3,11 @@ class ApplicationController < Sinatra::Base
 	Bundler.require()
 
 	ActiveRecord::Base.establish_connection(
-		:adapter => 'postgresql'
-		:database => 'food-pantry'
+		:adapter => 'postgresql',
+		:database => 'foodpantry'
 
 		)
-	register Sinatra:CrossOrigin 
+	register Sinatra::CrossOrigin 
 
 		configure do 
 			enable :cross_origin
@@ -38,5 +38,6 @@ class ApplicationController < Sinatra::Base
 		end
 
 
-	end
+
+	
 end

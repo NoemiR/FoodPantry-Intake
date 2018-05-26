@@ -1,4 +1,4 @@
 class Admin < ActiveRecord::Base
 
-		hsa_secure_password
+		has_secure_password
 end

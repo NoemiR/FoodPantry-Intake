@@ -15,7 +15,7 @@ require './models/AdminModel'
 #routes
 
 map('/') {
-	run ApplicationCrontroller
+	run ApplicationController
 }
 
 

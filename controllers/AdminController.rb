@@ -11,6 +11,15 @@ class AdminController < ApplicationController
 		end
 	end
 
+	get "/" do 
+		admin = Admin.all
+		{
+			success: true,
+			message: "AdminController",
+			admin: admin
+		}.to_json
+	end
+
 	post '/register' do 
 
 		admin = Admin.new
@@ -74,5 +83,7 @@ class AdminController < ApplicationController
 			success: true,
 			message: "You are logged out"
 		}.to_json
+	end
+
 
 end
