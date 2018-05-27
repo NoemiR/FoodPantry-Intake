@@ -14,18 +14,25 @@ user should be able to
 
 	view summary of who visitited/received assistance on a certain date
 
-	enter assistances (pickups by a family)
+	enter (pickups by a family)
 
 
-	add events
-	view events
-	edit events
-	delete/deactivate events
+	add schedule
+	view schedule
+	edit schedule
+	delete/deactivate schedule
+	
+	
+	
+	add shift
+	view shift
+	edit shift
+	delete/deactivate shift
 
 
 	view a calendar with 
-		events 
-		assistance dates
+		schedule 
+		pickup dates
 
 
 	add volunteers
