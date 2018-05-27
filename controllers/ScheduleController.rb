@@ -18,6 +18,16 @@ class ScheduleController < ApplicationController
 
 	end
 
+	get "/:id" do
+		schedule = Schedule.find params[:id]
+		{
+			success: true,
+			message: "this is the schedule with this id",
+			schedule: schedule
+		}.to_json
+	end
+
+
 
 	get '/:id/pickups' do 
 		schedule = Schedule.find params[:id]

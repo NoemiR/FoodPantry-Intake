@@ -45,3 +45,13 @@ INSERT INTO schedules (date, title, note, family_id) VALUES ('9-09-18', 'Christm
 INSERT INTO schedules (date, title, note, family_id) VALUES ('5-15-12', 'Christmas Baskets', '100 families', '6');
 INSERT INTO schedules (date, title, note, family_id) VALUES ('6-19-17', 'Christmas Baskets', '100 families', '7');
 
+
+
+INSERT INTO shifts (title) VALUES ('Christmas');
+INSERT INTO shifts (title) VALUES ('Christmas');
+INSERT INTO shifts (title) VALUES ('Christmas');
+INSERT INTO shifts (title) VALUES ('Christmas');
+INSERT INTO shifts (title) VALUES ('Christmas');
+INSERT INTO shifts (title) VALUES ('Christmas');
+INSERT INTO shifts (title) VALUES ('Christmas');
+

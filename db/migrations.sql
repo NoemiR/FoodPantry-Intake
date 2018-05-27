@@ -47,6 +47,14 @@ CREATE TABLE pickups(
 );
 
 
+CREATE TABLE shifts(
+	id SERIAL PRIMARY KEY,
+	title VARCHAR(256),
+	volunteer_id REFERENCES volunteers(id),
+	schedule_id INT REFERENCES schedule(id)
+
+);
+
 
 
 

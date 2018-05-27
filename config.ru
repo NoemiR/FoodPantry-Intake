@@ -10,6 +10,7 @@ require './controllers/FamilyController'
 require './controllers/RegistrationController'
 require './controllers/PickUpController'
 require './controllers/ScheduleController'
+require './controllers/ShiftController'
 
 
 #models
@@ -19,6 +20,7 @@ require './models/FamilyModel'
 require './models/RegistrationModel'
 require './models/PickUpModel'
 require './models/ScheduleModel'
+require './models/ShiftModel'
 
 #routes
 
@@ -48,6 +50,10 @@ map('/pickups'){
 
 map('/schedules'){
 	run ScheduleController
+}
+
+map('/shifts'){
+	run ShiftController
 }
 
 
