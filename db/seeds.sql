@@ -37,4 +37,11 @@ INSERT INTO pickups (date, family_id) VALUES ('7-19-17', '3');
 INSERT INTO pickups (date, family_id) VALUES ('5-19-17', '2');
 INSERT INTO pickups (date, family_id) VALUES ('6-09-15', '1');
 
+INSERT INTO schedules (date, title, note, family_id) VALUES ('4-23-18', 'Open house', '100 families', '1');
+INSERT INTO schedules (date, title, note, family_id) VALUES ('1-23-18', 'Open house', '100 families', '3');
+INSERT INTO schedules (date, title, note, family_id) VALUES ('3-23-16', 'Open house', '100 families', '2');
+INSERT INTO schedules (date, title, note, family_id) VALUES ('8-05-15', 'Open house', '100 families', '4');
+INSERT INTO schedules (date, title, note, family_id) VALUES ('9-09-18', 'Christmas Baskets', '100 families', '5');
+INSERT INTO schedules (date, title, note, family_id) VALUES ('5-15-12', 'Christmas Baskets', '100 families', '6');
+INSERT INTO schedules (date, title, note, family_id) VALUES ('6-19-17', 'Christmas Baskets', '100 families', '7');
 
