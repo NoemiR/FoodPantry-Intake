@@ -11,6 +11,7 @@ require './controllers/RegistrationController'
 require './controllers/PickUpController'
 require './controllers/ScheduleController'
 require './controllers/ShiftController'
+require './controllers/VolunteerController'
 
 
 #models
@@ -21,6 +22,7 @@ require './models/RegistrationModel'
 require './models/PickUpModel'
 require './models/ScheduleModel'
 require './models/ShiftModel'
+require './models/VolunteerModel'
 
 #routes
 
@@ -56,6 +58,9 @@ map('/shifts'){
 	run ShiftController
 }
 
+map('/volunteers'){
+	run VolunteerController
+}
 
 
 

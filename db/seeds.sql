@@ -55,3 +55,13 @@ INSERT INTO shifts (title) VALUES ('Christmas');
 INSERT INTO shifts (title) VALUES ('Christmas');
 INSERT INTO shifts (title) VALUES ('Christmas');
 
+
+INSERT INTO volunteers (name, address, phone, route) VALUES ('Noemi Martinez', '2756 N. Troy ', '7733963956','#1');
+INSERT INTO volunteers (name, address, phone, route) VALUES ('Rene Padilla', '2756 N. Troy ', '7735657656','#2');
+INSERT INTO volunteers (name, address, phone, route) VALUES ('Alex Medina', '2756 N. Troy ', '7738978976','#3');
+INSERT INTO volunteers (name, address, phone, route) VALUES ('Leo Rivera', '2756 N. George ', '7738988778','#4');
+INSERT INTO volunteers (name, address, phone, route) VALUES ('Julio Martinez', '2756 N. Elmer ', '7733963956','#5');
+INSERT INTO volunteers (name, address, phone, route) VALUES ('Adrian Gonzalez', '2756 N. Melvina ', '7733767656','#6');
+INSERT INTO volunteers (name, address, phone, route) VALUES ('Lizbeth Romero', '2756 N. Nena ', '7733987806','#1');
+
+
