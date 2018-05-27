@@ -25,11 +25,15 @@ class ShiftController < ApplicationController
 		}.to_json
 	end
 
+	get '/volunteers/:volunteer_id' do 
+		volunteerShifts = Shift.where volunteer_id params[:volunteer_id]
+		{
+			success: true,
+			message: "this is the shifts for this volunteer",
+			volunteerShifts: volunteerShifts
+		}.to_json
 
 	post "/" do 
-		payload_body = request.body.read
-		payload = JSON.parse(payload_body).symbolize_keys
-		shift
 		@shift = Shift.new
 		@shift.title = payload[:title]
 		@shift.volunteer_id = payload[:volunteer_id]
@@ -39,29 +43,25 @@ class ShiftController < ApplicationController
 	end
 
 
-	post "/" do 
-		payload_body = request.body.read
-		payload = JSON.parse(payload_body).symbolize_keys
-		shift
-		@shift = Shift.new
-		@shift.title = payload[:title]
-		@shift.volunteer_id = payload[:volunteer_id]
-		@shift.schedule_id = payload[:schedule_id]
-		@shift.save
-		@shift.to_json
-	end
-
-
-	delete '/' do
-		payload_body = request.body.read
-		payload = JSON.parse(payload_body).symbolize_keys
-		shift
+	put "/:id" do 
 		@shift = Shift.find params[:id]
+		@shift.title = payload[:title]
+		@shift.volunteer_id = payload[:volunteer_id]
+		@shift.schedule_id = payload[:schedule_id]
+		@shift.save
+		@shift.to_json
+	end
+
+
+	delete '/:id' do
+		@shift = Shift.find params[:id]
+		@shift.destroy
 		{
 			success: true,
 			message: "you deleted a shift"
 		}.to_json
 	end
+end
 
 
 end

@@ -53,7 +53,7 @@ class FamilyController < ApplicationController
 	end
 
 
-	post '/register' do 
+	post '/' do 
 		family = Family.new
 		family.name = @payload[:name]
 		family.phone = @payload[:phone]
@@ -84,11 +84,6 @@ class FamilyController < ApplicationController
 
 
 	put '/:id' do 
-		payload_body = request.body.read
-		payload = JSON.parse(payload_body).symbolize_keys
-
-		puts"this is the payload"
-		p payload
 		@family = Family.find params[:id]
 		@family.name = payload[:name]
 		@family.save 

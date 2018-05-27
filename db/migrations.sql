@@ -1,4 +1,5 @@
 DROP DATABASE IF EXISTS foodpantry;
+
 CREATE DATABASE foodpantry;
 
 \c foodpantry
@@ -30,7 +31,6 @@ CREATE TABLE registrations(
 	active BOOLEAN
 );
 
-
 CREATE TABLE volunteers(
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(256),
@@ -38,10 +38,9 @@ CREATE TABLE volunteers(
 	phone VARCHAR(256),
 	email VARCHAR(256),
 	startdate VARCHAR(256),
-	route VARCHAR,
+	route VARCHAR(256),
 	birthdate VARCHAR(256)
 );
-
 
 CREATE TABLE schedules(
 	id SERIAL PRIMARY KEY,
@@ -49,7 +48,7 @@ CREATE TABLE schedules(
 	title VARCHAR(256),
 	note VARCHAR(256),
 	type VARCHAR(256),
-	volunteer_id REFERENCES volunteers(id),
+	volunteer_id INT REFERENCES volunteers(id),
 	family_id INT REFERENCES families(id)
 );
 
@@ -57,15 +56,15 @@ CREATE TABLE pickups(
 	id SERIAL PRIMARY KEY,
 	date VARCHAR(64),
 	family_id INT REFERENCES families(id),
-	schedule_id INT REFERENCES schedule(id)
+	schedule_id INT REFERENCES schedules(id)
 );
 
 
 CREATE TABLE shifts(
 	id SERIAL PRIMARY KEY,
 	title VARCHAR(256),
-	volunteer_id REFERENCES volunteers(id),
-	schedule_id INT REFERENCES schedule(id)
+	volunteer_id INT REFERENCES volunteers(id),
+	schedule_id INT REFERENCES schedules(id)
 
 );
 

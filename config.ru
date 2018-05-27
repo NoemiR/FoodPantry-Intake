@@ -46,7 +46,7 @@ map('/registrations'){
 }
 
 map('/pickups'){
-	run AdminController
+	run PickUpController
 }
 
 

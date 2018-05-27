@@ -41,9 +41,6 @@ class ScheduleController < ApplicationController
 
 
 	post '/' do
-		payload_body = request.body.read
-		payload = JSON.parse(payload_body).symbolize_keys
-		pickup
 		@schedule = Schedule.new
 		@schedule.date = payload[:date]
 		@schedule.title = payload[:title]
@@ -56,11 +53,8 @@ class ScheduleController < ApplicationController
 	end
 
 
-	put '/' do
-		payload_body = request.body.read
-		payload = JSON.parse(payload_body).symbolize_keys
-		pickup
-		@schedule = Schedule.new
+	put '/:id' do
+		@schedule = Schedule.find params[:id]
 		@schedule.date = payload[:date]
 		@schedule.title = payload[:title]
 		@schedule.note = payload[:note]
@@ -73,10 +67,8 @@ class ScheduleController < ApplicationController
 
 
 	delete '/' do
-		payload_body = request.body.read
-		payload = JSON.parse(payload_body).symbolize_keys
-		schedule
 		@schedule = Schedule.find params[:id]
+		@schedule.destroy
 		{
 			success: true,
 			message: "you deleted a schedule"

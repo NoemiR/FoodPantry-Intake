@@ -17,7 +17,7 @@ class PickUpController < ApplicationController
 		@pickups.to_json
 	end
 	get "/:id" do
-		pickup = Pickup.find params[:id]
+		@pickup = Pickup.find params[:id]
 		{
 			success: true,
 			message: "this is the pickup with this id",
@@ -26,7 +26,7 @@ class PickUpController < ApplicationController
 	end
 
 	get '/:id/families' do
-		pickup = Pickup.find params[:id]
+		@pickup = Pickup.find params[:id]
 		this_pickup_families = pickup.families
 		{
 			success: true, 
