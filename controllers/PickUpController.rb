@@ -12,12 +12,14 @@ class PickUpController < ApplicationController
 	end
 
 
-	get '/' do 
-		@pickups = Pickup.all 
-		@pickups.to_json
+	get "/" do 
+		pickup = Pickup.all.order(date: :desc)
+		pickup.to_json
 	end
+
+
 	get "/:id" do
-		@pickup = Pickup.find params[:id]
+		pickup = Pickup.find params[:id]
 		{
 			success: true,
 			message: "this is the pickup with this id",
@@ -25,13 +27,24 @@ class PickUpController < ApplicationController
 		}.to_json
 	end
 
-	get '/:id/families' do
-		@pickup = Pickup.find params[:id]
-		this_pickup_families = pickup.families
+	get "/families" do
+		families = Pickup.where(pickup: true)
 		{
+
 			success: true, 
 			message: "this families came to pick up on #{pickup.date}",
-			familes: this_pickup_families
+			familes: families
+		}.to_json
+	end
+
+	# getting all pickups for this family
+	get '/families/:family_id' do
+		family_pickups = Pickup.where family_id: params[:family_id]
+		
+		{
+			success: true, 
+			message: "this families came ",
+			family_pickups: family_pickups
 		}.to_json
 	end
 

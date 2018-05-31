@@ -47,7 +47,6 @@ CREATE TABLE schedules(
 	date VARCHAR(64),
 	title VARCHAR(256),
 	note VARCHAR(256),
-	type VARCHAR(256),
 	volunteer_id INT REFERENCES volunteers(id),
 	family_id INT REFERENCES families(id)
 );

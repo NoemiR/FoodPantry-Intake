@@ -17,8 +17,12 @@ class FamilyController < ApplicationController
 	end
 
 	get '/:id' do 
-		family = Family.find params[:id]
-		@family.to_json
+		show_family = Family.find params[:id]
+		{
+			success: true,
+			message: "Here is the inf for #{show_family.name}",
+			show_family: show_family
+		}.to_json
 	end	
 
 
@@ -53,7 +57,7 @@ class FamilyController < ApplicationController
 	end
 
 
-	post '/' do 
+	post '/register' do 
 		family = Family.new
 		family.name = @payload[:name]
 		family.phone = @payload[:phone]
@@ -67,16 +71,17 @@ class FamilyController < ApplicationController
 
 
 
-			session[:logged_in] = true
-			session[:name] = family.name
-			session[:family_id] =family.id
+		# session[:logged_in] = true
+		# session[:name] = @famiy.name
+		# session[:family_id] = @family.id
 
 
 		{
 			success: true,
 			family_id: family.id,
-			family: family.name,
-			message: "This #{family} is now registered"
+			family_name: family.name,
+			message: "The #{family.name} is now registered",
+			family: family
 		}.to_json
 	
 	end
@@ -87,7 +92,12 @@ class FamilyController < ApplicationController
 		@family = Family.find params[:id]
 		@family.name = payload[:name]
 		@family.save 
-		@family.to_json
+		
+		{
+			success: true,
+			message: "You updated this family",
+			updated_family: @family
+		}.to_json
 	end
 
 
@@ -96,7 +106,8 @@ class FamilyController < ApplicationController
 		@family.destroy
 		{
 			success: true,
-			message: "This family is no longer active"
+			message: "This family is no longer active",
+			deleted_family: @family
 		}.to_json
 	end
 

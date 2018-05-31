@@ -23,9 +23,9 @@ class RegistrationController < ApplicationController
 
 
 
-			session[:logged_in] = true
-			session[:name] = family.name
-			session[:family_id] =family.id
+			# session[:logged_in] = true
+			# session[:name] = family.name
+			# session[:family_id] =family.id
 
 
 		{

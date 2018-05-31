@@ -17,7 +17,7 @@ class ShiftController < ApplicationController
 	end
 
 	get "/:id" do
-		shift = Shif.find params[:id]
+		shift = Shift.find params[:id]
 		{
 			success: true,
 			message: "this is the shift with this id",
@@ -25,13 +25,17 @@ class ShiftController < ApplicationController
 		}.to_json
 	end
 
+
+	# getting shift for this volunteer
 	get '/volunteers/:volunteer_id' do 
-		volunteerShifts = Shift.where volunteer_id params[:volunteer_id]
+		volunteer_shifts = Shift.where volunteer_id: params[:volunteer_id]
 		{
 			success: true,
 			message: "this is the shifts for this volunteer",
-			volunteerShifts: volunteerShifts
+			volunteer_shifts: volunteer_shifts
 		}.to_json
+	end
+
 
 	post "/" do 
 		@shift = Shift.new
@@ -63,5 +67,3 @@ class ShiftController < ApplicationController
 	end
 end
 
-
-end

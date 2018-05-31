@@ -13,8 +13,8 @@ class ScheduleController < ApplicationController
 
 
 	get "/" do 
-		@schedule = Schedule.all 
-		@schedule.to_json
+		schedule = Schedule.all 
+		schedule.to_json
 
 	end
 
@@ -27,6 +27,26 @@ class ScheduleController < ApplicationController
 		}.to_json
 	end
 
+
+	get "/pickups/families/:id" do
+		pickup = Pickup.find params[:id]
+		schedule_family_pickups = pickup.families
+		{
+			success: true,
+			message: "These families attended pickup #{pickup.id}",
+			families: schedule_family_pickups
+		}.to_json 
+	end
+
+	get "/shift/volunteers/:id" do
+		shift = Shift.find params[:id]
+		schedule_volunteers_shifts = shift.volunteers
+		{
+			success: true,
+			message: "These families attended pickup #{pickup.id}",
+			volunteers: schedule_volunteers_shifts
+		}.to_json 
+	end
 
 
 	get '/:id/pickups' do 
@@ -41,26 +61,24 @@ class ScheduleController < ApplicationController
 
 
 	post '/' do
-		@schedule = Schedule.new
-		@schedule.date = payload[:date]
-		@schedule.title = payload[:title]
-		@schedule.note = payload[:note]
-		@schedule.type = payload[:type]
-		@schedule.volunteer_id = payload[:volunteer_id]
-		@schedule.family_id = payload[:family_id]
-		@schedule.save
-		@schedule.to_json
+		schedule = Schedule.new
+		schedule.date = @payload[:date]
+		schedule.title = @payload[:title]
+		schedule.note = @payload[:note]
+		schedule.volunteer_id = @payload[:volunteer_id]
+		schedule.family_id = @payload[:family_id]
+		schedule.save
+		schedule.to_json
 	end
 
 
 	put '/:id' do
 		@schedule = Schedule.find params[:id]
-		@schedule.date = payload[:date]
-		@schedule.title = payload[:title]
-		@schedule.note = payload[:note]
-		@schedule.type = payload[:type]
-		@schedule.volunteer_id = payload[:volunteer_id]
-		@schedule.family_id = payload[:family_id]
+		@schedule.date = @payload[:date]
+		@schedule.title = @payload[:title]
+		@schedule.note = @payload[:note]
+		@schedule.volunteer_id = @payload[:volunteer_id]
+		@schedule.family_id = @payload[:family_id]
 		@schedule.save
 		@schedule.to_json
 	end

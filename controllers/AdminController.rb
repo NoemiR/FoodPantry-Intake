@@ -27,7 +27,7 @@ class AdminController < ApplicationController
 		admin.password = @payload[:password]
 		admin.save
 
-		session[:logget_in] = true
+		session[:logged_in] = true
 		session[:username] = admin.username
 		session[:admin_id] = admin.id
 		puts ""
@@ -38,7 +38,7 @@ class AdminController < ApplicationController
 		#send message to tell them the username is blank
 		{
 			success: true,
-			username: user.username,
+			username: admin.username,
 			admin_id: admin.id,
 			message: "You are logged in"
 		}.to_json

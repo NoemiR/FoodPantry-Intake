@@ -1,0 +1,54 @@
+user should be able to
+	
+	register new families (each year), including name, address, phone, income, employement, authorized person, household size, photo, registration date
+
+	view a monthly summary for each family
+
+	view family info
+
+	edit/delete/deactivate families
+
+	view summary of who visitited/received assistance on a certain date
+
+	enter assistances (pickups by a family)
+
+
+	add events
+	view events
+	edit events
+	delete/deactivate events
+
+
+	view a calendar with 
+		events 
+		assistance dates
+
+
+	add volunteers
+	view volunteer info 
+	edit volunteer info
+	delete/deactivate volunteer info
+
+-----------MVP ends here
+
+schedule volunteers -CRUD for shifts (pick a volunteer, pick a date)
+click a date on a calendar to see volunteers scheduled?
+
+------------
+
+	donations
+		C
+		R
+		U
+		D
+
+	donors (address, phone, email)
+		C
+		R
+		U
+		D
+
+--------------
+
+volunteer users? some day
+

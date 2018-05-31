@@ -35,11 +35,12 @@ class VolunteerController < ApplicationController
 		}.to_json
 	end
 
-	post '/register' do 
+	post '/register' do
+ 
 		volunteer = Volunteer.new
 		volunteer.name = @payload[:name]
-		volunteer.phone = @payload[:phone]
 		volunteer.address = @payload[:address]
+		volunteer.phone = @payload[:phone]
 		volunteer.email = @payload[:email]
 		volunteer.startdate = @payload[:startdate]
 		volunteer.route = @payload[:route]
@@ -48,16 +49,16 @@ class VolunteerController < ApplicationController
 
 
 
-			session[:logged_in] = true
-			session[:name] = volunteer.name
-			session[:volunteer_id] =volunteer.id
+			# session[:logged_in] = true
+			# session[:name] = volunteer.name
+			# session[:volunteer_id] =volunteer.id
 
 
 		{
 			success: true,
 			volunteer_id: volunteer.id,
 			volunteer: volunteer.name,
-			message: "This #{volunteer} is now registered"
+			message: "#{volunteer.name} is now registered"
 		}.to_json
 	end
 
