@@ -13,7 +13,7 @@ class ScheduleController < ApplicationController
 
 
 	get "/" do 
-		schedule = Schedule.all 
+		schedule = Schedule.all.order(date: :desc) 
 		schedule.to_json
 
 	end

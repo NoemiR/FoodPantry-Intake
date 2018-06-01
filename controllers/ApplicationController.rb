@@ -6,36 +6,36 @@ class ApplicationController < Sinatra::Base
 		:adapter => 'postgresql',
 		:database => 'foodpantry'
 
-		)
+	)
 	register Sinatra::CrossOrigin 
 
-		configure do 
-			enable :cross_origin
-		end
+	configure do 
+		enable :cross_origin
+	end
 
-		set :allow_origin, :any
-		set :allow_methods, [:get, :post, :options, :put, :patch, :delete]
-		set :allow_credentials, true 
-
-
-		options '*' do 
-			response.headers['Allow'] = 'HEAD, GET, POST, PUT, PATCH, DELETE'
-			response.headers['Access-Control-Allow-Origin'] = '*'
-			response.headers['Access-Control-Allow-Headers'] = 'X-Request-With, X-HTTP-Method-Override, Content-Type, Cache-Control, Accept'
-		end
+	set :allow_origin, :any
+	set :allow_methods, [:get, :post, :options, :put, :patch, :delete]
+	set :allow_credentials, true 
 
 
-		get '/' do 
-			{
-				success: false, 
-				message: 'Please consult the API documentation'
-			}.to_json
-		end
+	options '*' do 
+		response.headers['Allow'] = 'HEAD, GET, POST, PUT, PATCH, DELETE'
+		response.headers['Access-Control-Allow-Origin'] = '*'
+		response.headers['Access-Control-Allow-Headers'] = 'X-Request-With, X-HTTP-Method-Override, Content-Type, Cache-Control, Accept'
+	end
 
 
-		not_found do 
-			halt 404
-		end
+	get '/' do 
+		{
+			success: false, 
+			message: 'Please consult the API documentation'
+		}.to_json
+	end
+
+
+	not_found do 
+		halt 404
+	end
 
 
 
