@@ -90,7 +90,15 @@ class FamilyController < ApplicationController
 
 	put '/:id' do 
 		@family = Family.find params[:id]
-		@family.name = payload[:name]
+		puts @family
+		@family.name = @payload[:name]
+		@family.phone = @payload[:phone]
+		@family.address = @payload[:address]
+		@family.income = @payload[:income]
+		@family.household = @payload[:household]
+		@family.employment = @payload[:employment]
+		@family.birthdate = @payload[:birthdate]
+		@family.intake = @payload[:intake]		
 		@family.save 
 		
 		{

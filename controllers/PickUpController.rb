@@ -50,27 +50,22 @@ class PickUpController < ApplicationController
 
 
 	post '/' do
-		payload_body = request.body.read
-		payload = JSON.parse(payload_body).symbolize_keys
-		pickup
+
 		@pickup = Pickup.new
-		@pickup.date = payload[:date]
-		@pickup.family_id = payload[:family_id]
-		@pickup.schedule_id = payload[:schedule_id]
+		@pickup.date = @payload[:date]
+		@pickup.family_id = @payload[:family_id]
+		@pickup.schedule_id = @payload[:schedule_id]
+
 		@pickup.save
 		@pickup.to_json
 	end
 
-	put '/' do
-		payload_body = request.body.read
-		payload = JSON.parse(payload_body).symbolize_keys
-		pickup
-		@pickup = Pickup.find params[:id]
-		@pickup.date = payload[:date]
-		@pickup.family_id = payload[:family_id]
-		@pickup.schedule_id = payload[:schedule_id]
-		@pickup.save
-		@pickup.to_json
+	put '/:id' do
+
+		pickup = Pickup.find params[:id]
+		pickup.checkin = true
+		pickup.save
+		pickup.to_json
 	end
 
 	delete '/' do

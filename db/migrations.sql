@@ -55,7 +55,8 @@ CREATE TABLE pickups(
 	id SERIAL PRIMARY KEY,
 	date VARCHAR(64),
 	family_id INT REFERENCES families(id),
-	schedule_id INT REFERENCES schedules(id)
+	schedule_id INT REFERENCES schedules(id),
+	checkIn BOOLEAN
 );
 
 
