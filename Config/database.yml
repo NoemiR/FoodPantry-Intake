@@ -1,6 +1,6 @@
 development:
   adapter: postgresql
-  database: carpoolic
+  database: foodpantry
   pool: 20
   username: <%= ENV['PG_USER'] %>
   password: <%= ENV['PG_PASS'] %>
