@@ -20,7 +20,9 @@ INSERT INTO registrations (date, family_id, active) VALUES ('8-05-15', 4, 'false
 INSERT INTO registrations (date, family_id, active) VALUES ('9-09-18', 1, 'true');
 INSERT INTO registrations (date, family_id, active) VALUES ('5-15-12', 6, 'false');
 INSERT INTO registrations (date, family_id, active) VALUES ('6-19-17', 2, 'true');
--
+
+
+
 INSERT INTO volunteers (name, address, phone, route) VALUES ('Noemi Martinez', '2756 N. Troy', '773-396-3956','#1');
 INSERT INTO volunteers (name, address, phone, route) VALUES ('Rene Padilla', '2756 N. Troy', '773-565-7656','#2');
 INSERT INTO volunteers (name, address, phone, route) VALUES ('Alex Medina', '2756 N. Troy', '773-897-8976','#3');
@@ -65,13 +67,13 @@ INSERT INTO shifts (title, volunteer_id, schedule_id) VALUES ('Open house', 1, 3
 INSERT INTO shifts (title, volunteer_id, schedule_id) VALUES ('Christmas', 1, 3);
 INSERT INTO shifts (title, volunteer_id, schedule_id) VALUES ('Open house', 1, 3);
 
-INSERT INTO pickups (date, family_id, schedule_id, checkIn) VALUES ('6-19-17', 2, 1, false);
-INSERT INTO pickups (date, family_id, schedule_id, checkIn) VALUES ('3-19-15', 1, 3, false);
-INSERT INTO pickups (date, family_id, schedule_id, checkIn) VALUES ('4-19-18', 2, 1, false);
-INSERT INTO pickups (date, family_id, schedule_id, checkIn) VALUES ('4-19-16', 4, 4, false);
-INSERT INTO pickups (date, family_id, schedule_id, checkIn) VALUES ('7-19-17', 3, 1, false);
+INSERT INTO pickups (date, family_id, schedule_id, checkIn) VALUES ('3-19-17', 2, 1, false);
+INSERT INTO pickups (date, family_id, schedule_id, checkIn) VALUES ('6-19-15', 1, 3, false);
+INSERT INTO pickups (date, family_id, schedule_id, checkIn) VALUES ('1-19-18', 2, 1, false);
+INSERT INTO pickups (date, family_id, schedule_id, checkIn) VALUES ('8-19-16', 4, 4, false);
+INSERT INTO pickups (date, family_id, schedule_id, checkIn) VALUES ('1-19-17', 3, 1, false);
 INSERT INTO pickups (date, family_id, schedule_id, checkIn) VALUES ('5-19-18', 2, 4, false);
-INSERT INTO pickups (date, family_id, schedule_id, checkIn) VALUES ('6-09-15', 1, 2, false); 
+INSERT INTO pickups (date, family_id, schedule_id, checkIn) VALUES ('2-09-15', 1, 2, false); 
 
 
 

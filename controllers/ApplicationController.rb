@@ -2,11 +2,15 @@ class ApplicationController < Sinatra::Base
 	require 'bundler'
 	Bundler.require()
 
-	ActiveRecord::Base.establish_connection(
-		:adapter => 'postgresql',
-		:database => 'foodpantry'
+	# ActiveRecord::Base.establish_connection(
+	# 	:adapter => 'postgresql',
+	# 	:database => 'foodpantry'
 
-	)
+	# )
+
+	require './Config/environments.rb'
+
+
 	register Sinatra::CrossOrigin 
 
 	configure do 
